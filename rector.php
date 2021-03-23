@@ -1,11 +1,10 @@
 <?php
-
 declare(strict_types=1);
 
 use Rector\Core\Configuration\Option;
-use Rector\Php74\Rector\Property\TypedPropertyRector;
 use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Utils\Rector\SetToAdd;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     // get parameters
@@ -14,11 +13,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // Define what rule sets will be applied
     $parameters->set(Option::SETS, [
         SetList::DEAD_CODE,
+        SetList::PHP_80,
+        SetList::CODE_QUALITY
     ]);
-
-    // get services (needed for register a single rule)
-    // $services = $containerConfigurator->services();
-
-    // register a single rule
-    // $services->set(TypedPropertyRector::class);
+    // register single rule
+    $services = $containerConfigurator->services();
+    $services->set(SetToAdd::class);
 };

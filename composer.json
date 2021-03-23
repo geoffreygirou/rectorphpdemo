@@ -1,15 +1,20 @@
 {
-    "name": "geoffreygirou/rectorphpdemo",
-    "description": "Legacy PHP code upgraded with rectorphp",
-    "type": "project",
-    "license": "GNU General Public License v3.0",
-    "authors": [
-        {
-            "name": "geoffreygirou",
-            "email": "geoffrey.girou@gmail.com"
-        }
-    ],
-    "require-dev": {
-        "rector/rector": "^0.10.1"
+  "name": "geoffreygirou/rectorphpdemo",
+  "description": "Legacy PHP code samples to upgrade with rectorphp",
+  "type": "project",
+  "license": "GNU General Public License v3.0",
+  "authors": [
+    {
+      "name": "geoffreygirou",
+      "email": "geoffrey.girou@gmail.com"
     }
+  ],
+  "require-dev": {
+    "rector/rector": "^0.10.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
 }
